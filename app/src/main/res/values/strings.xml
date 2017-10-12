@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Mem2Speech</string>
+    <string name="title_canvas">Canvas</string>
+    <string name="title_image_to_text">Image</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_activity_converted_text">Converted Text</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_stroke">write</string>
+    <string name="button_clear">clear</string>
+    <string name="action_convert">convert</string>
+    <string name="button_erase">erase</string>
+    <string name="title_menu_save_text">Save as .txt</string>
+    <string name="title_menu_save_audio">Save as .wav</string>
+    <string name="title_menu_save_pdf">save as .pdf</string>
+    <string name="more">...</string>
+</resources>
