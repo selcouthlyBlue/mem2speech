@@ -10,8 +10,8 @@ libs
 |____armeabi-v7a
 | |____libtensorflow_inference.so
 |____libandroid_tensorflow_inference_java.jar
-|____x86
-| |____libtensorflow_inference.so
+|____x86| 
+|____libtensorflow_inference.so
 |____x86_64
 | |____libtensorflow_inference.so
 3. Build then run the application.
