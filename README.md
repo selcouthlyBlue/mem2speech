@@ -24,4 +24,6 @@ libs
 |____x86_64
 
 | |____libtensorflow_inference.so
+
+
 3. Build then run the application.
