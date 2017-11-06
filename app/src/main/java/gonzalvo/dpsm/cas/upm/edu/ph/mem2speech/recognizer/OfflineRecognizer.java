@@ -22,14 +22,13 @@ public class OfflineRecognizer implements Recognizer  {
     @Override
     public String recognizeHandwritingFrom(Bitmap bitmap) {
         bitmap = Bitmap.createScaledBitmap(bitmap, config.getImageWidth(), config.getImageHeight(), true);
-        int[] intValues = new int[bitmap.getWidth() * bitmap.getHeight()];
-        bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
+        int[] intValues = getPixelValuesFrom(bitmap);
         float[] floatValues = new float[bitmap.getWidth() * bitmap.getHeight()];
         for (int i = 0; i < intValues.length; ++i) {
             final int val = intValues[i];
             floatValues[i] = (((val >> 16) & 0xFF));
         }
-        float[] result = new float[80];
+        int[] result = new int[80];
 
         long[] INPUT_SIZE = new long[]{1, bitmap.getHeight(), bitmap.getWidth()};
         String[] inputs = new String[]{"input", "seq_len_input"};
@@ -40,6 +39,21 @@ public class OfflineRecognizer implements Recognizer  {
         inferenceInterface.run(outputs);
         inferenceInterface.fetch(outputs[0], result);
 
-        return result.toString();
+        return decode(result);
+    }
+
+    private int[] getPixelValuesFrom(Bitmap bitmap) {
+        int[] intValues = new int[bitmap.getWidth() * bitmap.getHeight()];
+        bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
+        return intValues;
+    }
+
+    private String decode(int[] result) {
+        String[] charset = config.getCharset();
+        StringBuilder sb = new StringBuilder();
+        for(int encodedCharacter : result){
+            sb.append(charset[encodedCharacter]);
+        }
+        return sb.toString();
     }
 }

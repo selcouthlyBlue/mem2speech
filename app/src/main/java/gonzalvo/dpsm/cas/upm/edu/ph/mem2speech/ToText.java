@@ -43,9 +43,9 @@ public class ToText extends AsyncTask<Object, Void, Void> {
         RecognizerConfigBuilder recognizerConfigBuilder = new RecognizerConfigBuilder();
         Recognizer recognizer = new OfflineRecognizer(recognizerConfigBuilder.setAssetManager(context.getAssets())
                 .setImageHeight(128)
-                .setImageWidth(1024)
+                .setImageWidth(128)
                 .setModelFilename("frozen_bi_lstm_ctc_ocr.pb")
-                .setCharsetFile("chars.txt")
+                .setCharsetFromFile("chars.txt")
                 .build());
         convertedText = recognizer.recognizeHandwritingFrom(bitmap);
         return null;
