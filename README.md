@@ -27,3 +27,5 @@ libs
 
 
 3. Build then run the application.
+
+To train models, go to this repository: https://github.com/selcouthlyBlue/bi_lstm_ocr
