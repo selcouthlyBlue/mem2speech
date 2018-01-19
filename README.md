@@ -1,4 +1,6 @@
 # mem2speech
+**This is now depecrated. The newer version (https://github.com/selcouthlyBlue/Mem2Speechv2) doesn't require adding the Tensorflow dependencies manually and is downloaded through gradle build.**
+
 Handwriting Recognition Application for Android using Tensorflow.
 
 If you want to use this application, follow these steps:
